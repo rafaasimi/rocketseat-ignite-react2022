@@ -10,7 +10,8 @@ import styles from './Post.module.css';
 export function Post({author, content, publishedAt}) {
   // Estados => Propriedades que eu quero que o React fique monitorando as mudanças
   const [comments, setComments] = useState([
-    'Post muito bacana amigão!'
+    {id: uuid(), content: 'Post muito bacana amigão!'},
+    {id: uuid(), content: 'Se ta doido, que conteudo daora.'},
   ]);
 
   const [newCommentText, setNewCommentText] = useState('');
@@ -22,16 +23,34 @@ export function Post({author, content, publishedAt}) {
   const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
     locale: ptBR,
     addSuffix: true,
-  })
+  });
 
   function handleCreateNewComment(event) {
     event.preventDefault();
 
     // const newCommentText = event.target.comment.value;
 
-    setComments([...comments, newCommentText]);
+    setComments([...comments, {id: uuid(), content: newCommentText}]);
     setNewCommentText('');
   }
+
+  function handleNewCommentChange(event) {
+    event.target.setCustomValidity('');
+    setNewCommentText(event.target.value);
+  }
+
+  function handleNewCommentInvalid(event) {
+    event.target.setCustomValidity('Esse campo é obrigatório.');
+  }
+
+  function deleteComment(commentIdToDelete) {
+    // IMUTABILIDADE -> As variáveis não sofrem mutação, nós criamos um novo valor
+    // um novo espaço na memória
+    const commentsWithoutDeleteOne = comments.filter(comment => comment.id !== commentIdToDelete);
+    setComments(commentsWithoutDeleteOne);
+  }
+
+  const isNewCommentEmpty = newCommentText.length === 0;
 
   return (
     <article className={styles.post}>
@@ -66,16 +85,28 @@ export function Post({author, content, publishedAt}) {
           name="comment"
           placeholder="Deixe um comentário"
           value={newCommentText}
-          onChange={(event) => setNewCommentText(event.target.value)}
+          onChange={handleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
+          required
         />
 
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Publicar
+          </button>
         </footer>
       </form>
 
       <div className={styles.commentList}>
-        {comments.map(comment => <Comment key={uuid()} content={comment}/>)}
+        {comments.map(comment => {
+          return (
+            <Comment
+              key={uuid()} 
+              comment={comment} 
+              onDeleteComment={deleteComment}
+            />
+          )
+        })}
       </div>
     </article>
   );
