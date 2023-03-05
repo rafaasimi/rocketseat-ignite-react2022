@@ -1,0 +1,6 @@
+.header {
+  margin: 0 auto;
+  padding: 5.125rem 1rem;
+  background: var(--gray-700);
+  text-align: center;
+}
