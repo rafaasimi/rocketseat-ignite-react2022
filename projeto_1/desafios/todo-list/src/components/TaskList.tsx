@@ -2,34 +2,34 @@ import { Trash } from 'phosphor-react';
 
 import styles from './TaskList.module.css';
 
-export function TaskList() {
+interface TaskListProps {
+  taskList: Task[];
+  onMarkTaskAsDone: (idTask: string) => void;
+  onDeleteTask: (idTask: string) => void;
+}
+
+interface Task {
+  id: string;
+  content: string;
+  isCompleted: boolean;
+}
+
+export function TaskList(props: TaskListProps) {
   return (
     <div className={styles.taskList}>
       <ul>
-        <li className={styles.taskItem}>
-          <input type="checkbox"/>
-          <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-          <button>
-            <Trash size={'1.5rem'}/>
-          </button>
-        </li>
-
-        <li className={styles.taskItem}>
-          <input type="checkbox"/>
-          <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-          <button>
-            <Trash size={'1.5rem'}/>
-          </button>
-        </li>
-
-        <li className={styles.taskItem}>
-          <input type="checkbox"/>
-          <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-          <button>
-            <Trash size={'1.5rem'}/>
-          </button>
-        </li>
+        {props.taskList.map((task) => {
+          return (
+            <li className={styles.taskItem} key={task.id}>
+              <input type="checkbox" checked={task.isCompleted} onChange={() => props.onMarkTaskAsDone(task.id)}/>
+              <p>{task.content}</p>
+              <button onClick={() => props.onDeleteTask(task.id)}>
+                <Trash size={24} />
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </div>
-  )
+  );
 }
