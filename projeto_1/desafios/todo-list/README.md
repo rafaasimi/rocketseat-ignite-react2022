@@ -34,8 +34,5 @@ $ npm run dev
 <img src="./.github/todo-desktop.png">
 <img src="./.github/todo-mobile.png">
 
-## 📝 Licença
-<p>O projeto se encontra sob licença MIT. Para mais detalhes, acesse <a href='LICENSE'>license<a>.</p>
-
 ---
 <p>Criado com 💙 por <a href='https://github.com/rafaasimi/' target='_blank'>Rafael Simionato</a></p>
