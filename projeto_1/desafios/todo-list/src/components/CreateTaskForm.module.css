@@ -84,3 +84,10 @@
   padding: 2px 8px;
   white-space: nowrap;
 }
+
+@media (max-width: 768px) {
+  .form {
+    flex-direction: column;
+    margin: -1.688rem 0 2rem;
+  }
+}
