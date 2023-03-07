@@ -33,6 +33,7 @@ export function CreateTaskForm() {
       ...ordenedTaskList,
     ]);
 
+    setNewTaskText('');
     orderTaskListByIsCompleted();
   }
 
