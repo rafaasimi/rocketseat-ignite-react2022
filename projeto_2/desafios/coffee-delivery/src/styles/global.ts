@@ -8,15 +8,21 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-    background: ${(props) => props.theme['gray-100']};
-    color: ${(props) => props.theme['gray-700']};
-    -webkit-font-smoothing: antialiased;
-  }
+body {
+  background: ${(props) => props.theme['gray-100']};
+  color: ${(props) => props.theme['gray-700']};
+  -webkit-font-smoothing: antialiased;
+}
 
-  body, input, textarea, button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-  }
+body, input, textarea, button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+}
 `
