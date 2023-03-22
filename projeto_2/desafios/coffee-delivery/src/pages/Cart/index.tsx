@@ -1,3 +1,9 @@
+import { OrderConfirmed } from '../../components/OrderConfirmed'
+
 export function Cart() {
-  return <h1>Cart</h1>
+  return (
+    <div className="container">
+      <OrderConfirmed />
+    </div>
+  )
 }
