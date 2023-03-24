@@ -85,3 +85,21 @@ export const MainBannerItems = styled.div`
     background: ${(props) => props.theme['purple-300']};
   }
 `
+
+export const CoffeeListContainer = styled.div`
+  margin-top: 2rem;
+
+  h2 {
+    font-family: 'Baloo 2', cursive;
+    font-size: 2rem;
+    line-height: 1.3;
+    color: ${(props) => props.theme['gray-800']};
+  }
+
+  .coffee-list {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem 2rem;
+  }
+`
