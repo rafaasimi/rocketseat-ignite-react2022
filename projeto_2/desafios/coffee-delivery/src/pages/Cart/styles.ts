@@ -8,7 +8,7 @@ export const CartContainer = styled.div`
 `
 
 export const CartForm = styled.div`
-  flex: 2;
+  flex: 1.4;
 
   h2 {
     font-size: 1.125rem;
@@ -199,7 +199,70 @@ export const PaymentType = styled.div`
 export const CartList = styled.div`
   flex: 1;
 
+  h2 {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    font-family: 'Baloo 2', cursive;
+    font-weight: bold;
+    color: ${(props) => props.theme['gray-800']};
+    margin-bottom: 1rem;
+  }
+`
+
+export const CartContent = styled.div`
   background: ${(props) => props.theme['gray-200']};
   border-radius: 6px 44px 6px 44px;
   padding: 2.5rem;
+
+  .cart-info {
+    margin-bottom: 1.5rem;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        font-size: 0.875rem;
+        line-height: 1.3;
+        color: ${(props) => props.theme['gray-700']};
+      }
+    }
+
+    div + div {
+      margin-top: 0.75rem;
+    }
+
+    div.total {
+      span {
+        color: ${(props) => props.theme['gray-800']};
+        font-weight: bold;
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+`
+
+export const ConfirmOrder = styled.button`
+  width: 100%;
+  color: ${(props) => props.theme.white};
+  background: ${(props) => props.theme['yellow-300']};
+  padding: 0.75rem;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: ${(props) => props.theme['yellow-500']};
+  }
 `

@@ -5,11 +5,14 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
+import { CartItem } from '../../components/CartItem'
 import { OrderConfirmed } from '../../components/OrderConfirmed'
 import {
   CartContainer,
+  CartContent,
   CartForm,
   CartList,
+  ConfirmOrder,
   PaymentAddress,
   PaymentType,
 } from './styles'
@@ -89,6 +92,30 @@ export function Cart() {
 
           <CartList>
             <h2>Cafés selecionados</h2>
+
+            <CartContent>
+              <ul>
+                <CartItem />
+                <CartItem />
+              </ul>
+
+              <div className="cart-info">
+                <div>
+                  <span>Total de itens</span>
+                  <span>R$ 29,70</span>
+                </div>
+                <div>
+                  <span>Entrega</span>
+                  <span>R$ 3,50</span>
+                </div>
+                <div className="total">
+                  <span>Total</span>
+                  <span>R$ 33,20</span>
+                </div>
+              </div>
+
+              <ConfirmOrder type="button">Confirmar pedido</ConfirmOrder>
+            </CartContent>
           </CartList>
         </CartContainer>
       )}
