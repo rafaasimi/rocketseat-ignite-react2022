@@ -29,5 +29,12 @@ Começamos a trabalhar com rotas utilizando React Router e a manipular formulár
 ### Projetos
 - [Ignite Timer](https://github.com/rafaasimi/rocketseat-ignite-react2022/tree/main/projeto_2/02-ignite-timer)
 
+<hr>
+
+## Projeto 3 - Consumo de API e performance no ReactJS
+Criamos projetos focados em consumo de API utilizando FetchAPI/Axios além do uso de métodos GET/POST. Também aprendemos a como melhorar a performance da nossa aplicação, fazendo uso de useCallback/useMemo.
+
+- [DT Money](https://github.com/rafaasimi/rocketseat-ignite-react2022/tree/main/projeto_3/03-dtmoney)
+
 ---
 <p>Criado com 💙 por <a href='https://github.com/rafaasimi/' target='_blank'>Rafael Simionato</a></p>
