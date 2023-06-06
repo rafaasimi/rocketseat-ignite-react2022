@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  min-height: 18.5rem;
+  height: 18.5rem;
   background-color: ${props => props.theme.blue};
   background-image: url('/bg-cover.png');
   background-repeat: no-repeat;
