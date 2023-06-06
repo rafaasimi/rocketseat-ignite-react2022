@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { GithubContext } from '../../contexts/GithubContext'
 import { Header } from "../../components/Header";
 import { api } from "../../lib/axios";
 import { CardProfile, CardProfileAvatar, CardProfileInfo, MainContainer } from "./styles";
@@ -17,25 +18,11 @@ interface User {
 }
 
 export function Home() {
-  const [user, setUser] = useState<User>({} as User);
-
-  async function fetchGithubUser() {
-    const { data } = await api.get('/users/rafaasimi');
-
-    setUser({
-      login: data.login,
-      name: data.name,
-      bio: data.bio,
-      company: data.company,
-      avatarUrl: data.avatar_url,
-      followers: data.followers,
-      url: data.html_url
-    });
-  }
+  const {user, fetchGithubUser} = useContext(GithubContext);
 
   useEffect(() => {
     fetchGithubUser();
-  }, [])
+  }, [fetchGithubUser])
 
   return (
     <>

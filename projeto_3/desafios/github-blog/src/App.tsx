@@ -1,19 +1,21 @@
-import { ThemeProvider } from 'styled-components'
-import { defaultTheme } from './styles/themes/default'
-import { GlobalStyle } from './styles/global'
-import { BrowserRouter } from 'react-router-dom'
-import { Router } from './Router'
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from './styles/themes/default';
+import { GlobalStyle } from './styles/global';
+import { BrowserRouter } from 'react-router-dom';
+import { Router } from './Router';
+import { GithubProvider } from './contexts/GithubContext';
 
 function App() {
-
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       <BrowserRouter>
-        <Router />
+        <GithubProvider>
+          <Router />
+        </GithubProvider>
       </BrowserRouter>
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;
