@@ -1,28 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import { GithubContext } from '../../contexts/GithubContext'
 import { Header } from "../../components/Header";
-import { api } from "../../lib/axios";
-import { CardProfile, CardProfileAvatar, CardProfileInfo, MainContainer } from "./styles";
+import { CardProfile, CardProfileAvatar, CardProfileInfo, IssuesList, MainContainer } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBuilding, faUserGroup, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { PostCard } from "../../components/PostCard";
 
-interface User {
-  login: string;
-  name: string;
-  bio: string;
-  company: string;
-  avatarUrl: string;
-  followers: number;
-  url: string;
-}
 
 export function Home() {
-  const {user, fetchGithubUser} = useContext(GithubContext);
+  const {user, issues, fetchGithubUser, fetchGithubIssues} = useContext(GithubContext);
 
   useEffect(() => {
     fetchGithubUser();
-  }, [fetchGithubUser])
+    fetchGithubIssues();
+  }, [])
 
   return (
     <>
@@ -57,6 +49,12 @@ export function Home() {
             </div>
           </CardProfileInfo>
         </CardProfile>
+
+        <IssuesList>
+          {issues.map((issue) => {
+            return (issue.content && <PostCard key={issue.id} issue={issue}/>)
+          })}
+        </IssuesList>
       </MainContainer>
 
     </>

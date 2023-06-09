@@ -4,7 +4,7 @@ export const MainContainer = styled.main`
   width: 100%;
   max-width: 864px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 2rem;
 `;
 
 export const CardProfile = styled.div`
@@ -94,8 +94,17 @@ export const CardProfileInfo = styled.div`
     }
 
     svg {
+      color: ${props => props.theme['base-label']};
       width: 18px;
       height: 18px;
     }
   }
+`
+
+export const IssuesList = styled.div`
+  margin-top: 3rem;
+  max-width: 864px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 `
