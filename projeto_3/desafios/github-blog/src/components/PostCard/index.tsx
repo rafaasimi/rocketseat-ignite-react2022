@@ -4,6 +4,8 @@ import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { PostCardContainer, PostCardDescription, PostCardHeader } from './styles';
 
+import remarkStripHtml from 'remark-strip-html'
+
 interface PostCardProps {
   issue: Issue;
 }
@@ -23,7 +25,7 @@ export function PostCard({ issue }: PostCardProps) {
           <span>{publishedDateRelativeToNow}</span>
         </PostCardHeader>
         <PostCardDescription>
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkStripHtml]}>{content}</ReactMarkdown>
         </PostCardDescription>
       </PostCardContainer>
   );
