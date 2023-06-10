@@ -60,7 +60,7 @@ export function GithubProvider({children}: GithubProviderProps) {
   }
 
   async function fetchGithubIssues(query?: string) {
-    const {data: {total_count, items}} = await api.get<GithubFetchIssues>('/search/issues', {
+    const {data: { items }} = await api.get<GithubFetchIssues>('/search/issues', {
       params: {
         q: `${query ? query : ''}repo:rocketseat-education/reactjs-github-blog-challenge`
       }
@@ -76,9 +76,13 @@ export function GithubProvider({children}: GithubProviderProps) {
         url: item.html_url,
         comments: item.comments,
       } as Issue
+    }).filter((item: any) => {
+      if(item.content) {
+        return item
+      }
     })
 
-    setIssuesCount(total_count);
+    setIssuesCount(issuesTreated.length);
     setIssues(issuesTreated);
   }
   

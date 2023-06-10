@@ -40,11 +40,11 @@ export const PostCardHeader = styled.div`
 `;
 
 export const PostCardDescription = styled.p`
-  & > * {
+  /* & > * {
     color: ${(props) => props.theme['base-text']};
     font-size: 1rem;
     font-weight: normal;
-  }
+  } */
 
   display: -webkit-box;
   -webkit-line-clamp: 4;

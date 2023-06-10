@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { GithubContext } from '../../contexts/GithubContext'
 import { Header } from "../../components/Header";
 import { CardProfile, CardProfileAvatar, CardProfileInfo, IssuesList, MainContainer } from "./styles";
@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBuilding, faUserGroup, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { PostCard } from "../../components/PostCard";
+import { SearchForm } from "../../components/SearchForm";
 
 
 export function Home() {
@@ -49,6 +50,8 @@ export function Home() {
             </div>
           </CardProfileInfo>
         </CardProfile>
+
+        <SearchForm />
 
         <IssuesList>
           {issues.map((issue) => {
