@@ -1,6 +1,5 @@
 import { useContext, useEffect } from "react";
 import { GithubContext } from '../../contexts/GithubContext'
-import { Header } from "../../components/Header";
 import { CardProfile, CardProfileAvatar, CardProfileInfo, IssuesList, MainContainer } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBuilding, faUserGroup, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'

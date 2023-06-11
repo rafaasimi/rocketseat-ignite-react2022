@@ -37,8 +37,70 @@ export const IssueContent = styled.div`
 
   pre {
     padding: 1rem;
-    background: ${props => props.theme['base-post']};
+    background: ${(props) => props.theme['base-post']};
     border-radius: 2px;
     margin: 2rem 0;
+  }
+
+  img {
+    max-width: 100%;
+    margin: 2rem 0 2rem;
+  }
+`;
+
+export const CardHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    position: relative;
+    text-transform: uppercase;
+    color: ${(props) => props.theme.blue};
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 140%;
+    margin-bottom: 1.25rem;
+
+    &:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: ${(props) => props.theme.blue};
+    }
+
+    svg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+  }
+`;
+
+export const CardTitle = styled.div`
+  margin-bottom: 0.5rem;
+
+  strong {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 140%;
+    color: ${(props) => props.theme['base-title']};
+  }
+`;
+
+export const CardStatus = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: ${(props) => props.theme['base-span']};
   }
 `;
