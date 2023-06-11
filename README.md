@@ -36,5 +36,7 @@ Criamos projetos focados em consumo de API utilizando FetchAPI/Axios além do us
 
 - [DT Money](https://github.com/rafaasimi/rocketseat-ignite-react2022/tree/main/projeto_3/03-dtmoney)
 
+- [Github Blog](https://github.com/rafaasimi/rocketseat-ignite-react2022/tree/main/projeto_3/desafios/github-blog)
+
 ---
 <p>Criado com 💙 por <a href='https://github.com/rafaasimi/' target='_blank'>Rafael Simionato</a></p>
