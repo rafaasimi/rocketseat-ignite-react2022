@@ -19,7 +19,6 @@ export function Home() {
 
   return (
     <>
-      <Header />
       <MainContainer>
         <CardProfile>
           <CardProfileAvatar src={user.avatarUrl} alt={user.name} />

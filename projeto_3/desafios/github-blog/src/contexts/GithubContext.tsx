@@ -68,7 +68,7 @@ export function GithubProvider({children}: GithubProviderProps) {
 
     const issuesTreated = items.map((item: any) => {
       return {
-        id: item.id,
+        id: item.number,
         title: item.title,
         content: item.body,
         author: item.user.login,

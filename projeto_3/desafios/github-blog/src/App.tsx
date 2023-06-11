@@ -4,6 +4,7 @@ import { GlobalStyle } from './styles/global';
 import { BrowserRouter } from 'react-router-dom';
 import { Router } from './Router';
 import { GithubProvider } from './contexts/GithubContext';
+import { Header } from './components/Header';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <GithubProvider>
+          <Header />
           <Router />
         </GithubProvider>
       </BrowserRouter>
