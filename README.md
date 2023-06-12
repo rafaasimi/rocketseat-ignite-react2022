@@ -32,8 +32,12 @@ Começamos a trabalhar com rotas utilizando React Router e a manipular formulár
 <hr>
 
 ## Projeto 3 - Consumo de API e performance no ReactJS
+
+### Descrição
 Criamos projetos focados em consumo de API utilizando FetchAPI/Axios além do uso de métodos GET/POST. Também aprendemos a como melhorar a performance da nossa aplicação, fazendo uso de useCallback/useMemo.
 
+
+### Projetos
 - [DT Money](https://github.com/rafaasimi/rocketseat-ignite-react2022/tree/main/projeto_3/03-dtmoney)
 
 - [Github Blog](https://github.com/rafaasimi/rocketseat-ignite-react2022/tree/main/projeto_3/desafios/github-blog)
