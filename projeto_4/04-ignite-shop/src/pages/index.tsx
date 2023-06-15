@@ -9,6 +9,7 @@ import { HomeContainer, Product } from '../styles/pages/home';
 import Stripe from 'stripe';
 import { FormatCurrency } from '../utils/format-currency';
 import Link from 'next/link';
+import Head from 'next/head';
 
 interface HomeProps {
   products: {
@@ -28,7 +29,13 @@ export default function Home({ products }: HomeProps) {
   });
 
   return (
-    <HomeContainer ref={sliderRef} className="keen-slider">
+    <>
+      <Head>
+        <title>Home | Ignite Shop</title>
+      </Head>
+
+      <HomeContainer ref={sliderRef} className="keen-slider">
+      
       {products.map((product) => {
         return (
           <Link key={product.id} href={`/product/${product.id}`} prefetch={false}>
@@ -48,7 +55,8 @@ export default function Home({ products }: HomeProps) {
           </Link>
         );
       })}
-    </HomeContainer>
+      </HomeContainer>
+    </>
   );
 }
 
