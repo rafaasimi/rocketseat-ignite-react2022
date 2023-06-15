@@ -42,5 +42,15 @@ Criamos projetos focados em consumo de API utilizando FetchAPI/Axios além do us
 
 - [Github Blog](https://github.com/rafaasimi/rocketseat-ignite-react2022/tree/main/projeto_3/desafios/github-blog)
 
+<hr>
+
+## Projeto 4 - Fundamentos do NextJS
+
+### Descrição
+Começamos a criar nossas aplicações utilizando NextJS. Aprendemos os conceitos do framework, SPA, SSR, SSG, outros. Criamos uma aplicação para venda de produtos onde realizamos a integração com o serviço de pagamentos Stripe, onde cadastramos nossos produtos e prosseguimos até a etapa de checkout/pagamento.
+
+### Projetos
+- [Ignite Shop](https://github.com/rafaasimi/rocketseat-ignite-react2022/tree/main/projeto_4/04-ignite-shop)
+
 ---
 <p>Criado com 💙 por <a href='https://github.com/rafaasimi/' target='_blank'>Rafael Simionato</a></p>
