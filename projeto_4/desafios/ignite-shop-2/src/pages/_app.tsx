@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 
 import imgFavicon from '../assets/logo.svg'
+import Cart from '../components/Cart';
 
 globalStyles();
 
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <Header>
           <Image src={logoImg} alt="Ignite Shop" />
+          <Cart />
         </Header>
       <Component {...pageProps} />
     </Container>
